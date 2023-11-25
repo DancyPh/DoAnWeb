@@ -1,0 +1,30 @@
+﻿@model IEnumerable<DoAn.Models.SanPham>
+
+@{
+    ViewBag.Title = "Product";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<div class="w3-container" id="selectedOptionContent">
+    <h2>Thống kê</h2>
+    <table class="w3-table w3-bordered">
+        <tr>
+            <th>Tên sản phẩm</th>
+            <th>Số lượng bán</th>
+            <th>Giá tiền</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.tenSanPham</td>
+                <td>@item.soLuong</td>
+                <td>@item.gia</td>
+            </tr>
+
+        }
+    </table>
+    @Html.Action("Total", "Home")
+</div>
+
+

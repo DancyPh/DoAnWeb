@@ -1,0 +1,34 @@
+﻿@model DoAn.Models.TonKho
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm("Index", "Product", FormMethod.Post, new { @class = "w3-container" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-group">
+        <label class="control-label">Tên sản phẩm</label>
+        <input class="w3-input" type="text" name="firstName" placeholder="@Model.tenSanPham" />
+    </div>
+
+    <div class="form-group">
+        <label class="control-label">Số lượng</label>
+        <input class="w3-input" type="text" name="lastName" placeholder="@Model.soLuongCL" />
+    </div>
+
+    <div class="form-group">
+        <label class="control-label">Giá</label>
+        <input class="w3-input" type="text" name="lastName" placeholder="@Model.SanPham.gia" />
+    </div>
+
+    <button type="submit" >Save</button>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

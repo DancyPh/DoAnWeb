@@ -1,0 +1,28 @@
+﻿@model IEnumerable<DoAn.Models.TonKho>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="w3-table w3-bordered">
+    <tr>
+        <th>Tên sản phẩm</th>
+        <th>Số lượng</th>
+        <th>Giá tiền</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.tenSanPham</td>
+            <td>@item.soLuongCL</td>
+            <td>@item.SanPham.gia</td>
+            <td><a href="@Url.Action("Edit", "Product", new { id = @item.maSanPham})">Edit</a></td>
+        </tr>
+    }
+</table>

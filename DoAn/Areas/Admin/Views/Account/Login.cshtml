@@ -70,19 +70,25 @@
 
 @using (Html.BeginForm("Login", "Account", FormMethod.Post))
 {
-        <div class="container">
-            <label for="uname"><b>Username</b></label>
-            @Html.TextBoxFor(m => m.taiKhoan, new { @placeholder = "Enter Username" })
-            <label for="psw"><b>Password</b></label>
-            @Html.TextBoxFor(m => m.matKhau, new { @placeholder = "Enter Password" })
-            <button type="submit">Login</button>
-            <label>
-                <input type="checkbox" checked="checked" name="remember"> Remember me
-            </label>
+    if (ViewBag.LoginStatus != null && ViewBag.LoginStatus == 0)
+    {
+        <div class="" style="color: red">
+            <p>InValid</p>
         </div>
+    }
+    <div class="container">
+        <label for="uname"><b>Username</b></label>
+        @Html.TextBoxFor(m => m.taiKhoan, new { @placeholder = "Enter Username" })
+        <label for="psw"><b>Password</b></label>
+        @Html.TextBoxFor(m => m.matKhau, new { @placeholder = "Enter Password", @type ="Password"})
+        <button type="submit">Login</button>
+        <label>
+            <input type="checkbox" checked="checked" name="remember"> Remember me
+        </label>
+    </div>
 
-        <div class="container" style="background-color:#f1f1f1">
-            <button type="button" class="cancelbtn">Cancel</button>
-            <span class="psw">Forgot <a href="#">password?</a></span>
-        </div>
+    <div class="container" style="background-color:#f1f1f1">
+       <button type="button" class="cancelbtn">Cancel</button>
+       <span class="psw">Forgot <a href="#">password?</a></span>
+   </div>
 }

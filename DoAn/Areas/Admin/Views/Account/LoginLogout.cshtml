@@ -1,0 +1,18 @@
+﻿@using System.Web.Routing
+@using DoAn.Models
+@using System.Diagnostics
+
+@{
+    NhanVien acc = (NhanVien)Session["taiKhoan"];
+}
+
+@if (Session["taiKhoan"] == null)
+{
+    <span>Welcome, <strong></strong></span>
+    <br>
+}
+else
+{
+    <span>Welcome, <strong>@acc.hoTen</strong></span>
+    <br>
+}

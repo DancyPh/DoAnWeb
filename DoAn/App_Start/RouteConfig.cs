@@ -19,6 +19,11 @@ namespace DoAn
 				defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional },
 				namespaces: new[]{ "DoAn.Controllers" }
 			);
+			routes.MapRoute(
+	name: "OrderDetail",
+	url: "Admin/Order/Detail/{id}",
+	defaults: new { controller = "Order", action = "Detail", id = UrlParameter.Optional }
+);
 		}
 	}
 }

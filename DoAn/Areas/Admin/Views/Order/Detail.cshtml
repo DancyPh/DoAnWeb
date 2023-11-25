@@ -1,0 +1,32 @@
+﻿@model IEnumerable<DoAn.Models.ChiTietDonHang>
+
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Detail</h2>
+
+<div class="w3-container" id="selectedOptionContent">
+    <h2>Chi tiết đơn hàng</h2>
+    <table class="w3-table w3-bordered">
+        <tr>
+            <th>Tên sản phẩm</th>
+            <th>Số lượng</th>
+            <th>Thành tiền</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.SanPham.tenSanPham</td>
+                <td>@item.soLuong</td>
+                <td>@item.thanhTien VND</td>
+            </tr>
+        }
+    </table>
+
+    @using (Html.BeginForm("Check", "Order", new { id = Model.FirstOrDefault()?.maDonHang}, FormMethod.Post))
+    {
+        <button type="submit">Xác nhận</button>
+    }
+</div>

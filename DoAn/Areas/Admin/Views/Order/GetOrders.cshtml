@@ -1,0 +1,41 @@
+﻿@model IEnumerable<DoAn.Models.DonHang>
+
+@{
+    ViewBag.Title = "GetOrders";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>GetOrders</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<div class="w3-container" id="selectedOptionContent">
+    <h2>Đơn hàng</h2>
+
+    <table class="w3-table w3-bordered">
+        <tr>
+            <th>Tên khách hàng</th>
+            <th>Ngày đặt</th>
+            <th>Tổng tiền</th>
+            <th>Trạng thái</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <!-- Hiển thị thông tin đơn hàng -->
+                <tr>
+                    <td>@item.KhachHang.hoTen</td>
+                    <td>@item.ngayDatHang</td>
+                    <td>
+                        @item.tongTien VND
+                    </td>
+                    <td>@item.IsConfirmed</td>
+                    <td>
+                        <!-- Nút hoặc liên kết chuyển đến trang chi tiết đơn hàng và xác nhận đơn -->
+                        <a href="@Url.Action("Detail", "Order", new { id = @item.maDonHang})">Detail</a>
+                    </td>
+                </tr>
+        }
+
+    </table>
+</div>

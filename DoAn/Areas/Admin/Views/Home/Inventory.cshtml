@@ -1,0 +1,30 @@
+﻿@model IEnumerable<DoAn.Models.TonKho>
+
+@{
+    ViewBag.Title = "Inventory";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Inventory</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+    <div class="w3-container inventoryContainer " >
+        <h2>Thống kê tồn kho</h2>
+        <table class="w3-table w3-bordered">
+            <tr>
+                <th>Tên sản phẩm</th>
+                <th>Số lượng tồn</th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.tenSanPham</td>
+                    <td>@item.soLuongCL</td>
+                </tr>
+            }
+
+        </table>
+    </div>

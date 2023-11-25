@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using DoAn.Models;
+using System.Web.Routing;
 
 namespace DoAn.Areas.Admin.Controllers
 {
@@ -28,17 +29,24 @@ namespace DoAn.Areas.Admin.Controllers
 
         [HttpPost]
         public ActionResult Login(NhanVien _userFormPage)
-		{
+        {
             var acc = data.NhanViens.Where(m => m.taiKhoan == _userFormPage.taiKhoan && m.matKhau == _userFormPage.matKhau).FirstOrDefault();
             if (acc == null)
-			{
-                ViewBag.LoginSatus = 0;
-			}
-			else
-			{
-                return RedirectToAction("Index", "Home");
-			}
+            {
+                ViewBag.LoginStatus = 0;
+            }
+            else
+            {
+                Session["taiKhoan"] = acc;
+                return RedirectToAction("Table", "Home");
+            }
+
             return View();
+        }
+
+        public ActionResult LoginLogout()
+		{
+            return PartialView("LoginLogout");
 		}
     }
 }

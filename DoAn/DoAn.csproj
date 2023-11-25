@@ -126,6 +126,8 @@
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\AccountController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Admin\Controllers\OrderController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ProductController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -156,8 +158,16 @@
     </Content>
     <Content Include="Areas\Admin\Views\web.config" />
     <Content Include="Areas\Admin\Views\Shared\_AdminLayout.cshtml" />
-    <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Account\Login.cshtml" />
+    <Content Include="Areas\Admin\Views\Account\LoginLogout.cshtml" />
+    <Content Include="Areas\Admin\Views\Home\Total.cshtml" />
+    <Content Include="Areas\Admin\Views\Home\Product.cshtml" />
+    <Content Include="Areas\Admin\Views\Order\GetOrders.cshtml" />
+    <Content Include="Areas\Admin\Views\Order\Detail.cshtml" />
+    <Content Include="Areas\Admin\Views\Product\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Product\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Home\Table.cshtml" />
+    <Content Include="Areas\Admin\Views\Home\Inventory.cshtml" />
     <None Include="Models\QLPizza.dbml.layout">
       <DependentUpon>QLPizza.dbml</DependentUpon>
     </None>

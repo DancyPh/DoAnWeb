@@ -1,0 +1,44 @@
+﻿@model IEnumerable<DoAn.Models.Ban>
+
+@{
+    ViewBag.Title = "Table";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<style>
+    .fix {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    button:hover {
+        cursor: pointer;
+    }
+</style>
+
+<h2>Table</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<div class="container" style="display:flex; justify-content:space-around">
+    @foreach (var item in Model)
+    {
+        if (item.trangThai == false)
+        {
+            <button type="submit" style="width: 50px; height: 50px; border:none ;border-radius: 50%; background-color: white">
+                @item.tenBan
+            </button>
+        }
+        else
+        {
+            <button type="submit" style="width: 50px; height: 50px; border:none ;border-radius: 50%; background-color: cornflowerblue">
+                @item.tenBan
+            </button>
+        }
+
+    }
+
+</div>
+
+
