@@ -1,0 +1,22 @@
+﻿<div class="btn-cart">
+    <a class="btn-cart_link" href="@Url.Action("GioHang", "GioHang")">
+        Gio Hang @ViewBag.Amount
+    </a>
+</div>
+
+
+<style>
+    .btn-cart {
+        
+        display: flex;
+        margin-top: 50px;
+        flex-direction: row-reverse;
+    }
+
+        .btn-cart .btn-cart_link {
+            background-color: red;
+            border-radius:20px;
+            color: white;
+            padding: 10px;
+        }
+</style>

@@ -87,7 +87,13 @@ namespace DoAn.Areas.Admin.Controllers
             return RedirectToAction("GetOrders", "Order");
         }
 
-        
+        [HttpGet]
+        public ActionResult GoiMon()
+		{
+            var product = data.SanPhams.ToList();
+            return View(product);
+        }
+
     }
 }
             

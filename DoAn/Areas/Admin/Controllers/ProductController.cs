@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using DoAn.Models;
 
+
 namespace DoAn.Areas.Admin.Controllers
 {
     public class ProductController : Controller
@@ -38,17 +39,17 @@ namespace DoAn.Areas.Admin.Controllers
 				{
                     return HttpNotFound();
 				}
+				else
+				{
+                    exist.tenSanPham = pro.tenSanPham;
+                    exist.soLuongCL = pro.soLuongCL;
+                    exist.SanPham.gia = pro.SanPham.gia;
 
-                exist.tenSanPham = pro.tenSanPham;
-                exist.soLuongCL = pro.soLuongCL;
-                exist.SanPham.gia = pro.SanPham.gia;
-
-                data.SubmitChanges();
-
-                return RedirectToAction("Index");
+                    data.SubmitChanges();
+                }
             }
 
-            return View(pro);
+            return RedirectToAction("Index","Product",pro);
 		}
 
     }
