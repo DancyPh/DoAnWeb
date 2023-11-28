@@ -12,12 +12,12 @@ namespace DoAn.Areas.Admin.Controllers
         QLPizzaDataContext data = new QLPizzaDataContext();
 
         // Get: GioHang
-        public List<GioHang> GetGioHang()
+        public List<Cart> GetGioHang()
 		{
-			List<GioHang> lstGioHang = Session["GioHang"] as List<GioHang>;
+			List<Cart> lstGioHang = Session["GioHang"] as List<Cart>;
             if (lstGioHang == null)
 			{
-                lstGioHang = new List<GioHang>();
+                lstGioHang = new List<Cart>();
                 Session["GioHang"] = lstGioHang;
 			}
             return lstGioHang;
@@ -26,11 +26,11 @@ namespace DoAn.Areas.Admin.Controllers
         // Add to cart
         public ActionResult AddToCart( int id, string url)
 		{
-            List<GioHang> lstGioHang = GetGioHang();
-            GioHang sp = lstGioHang.Find(i => i.iSanPham == id);
+            List<Cart> lstGioHang = GetGioHang();
+            Cart sp = lstGioHang.Find(i => i.iSanPham == id);
             if(sp == null)
 			{
-                sp = new GioHang(id);
+                sp = new Cart(id);
                 lstGioHang.Add(sp);
 			}
 			else
@@ -44,7 +44,7 @@ namespace DoAn.Areas.Admin.Controllers
         private int Amount()
 		{
             int amount = 0;
-            List<GioHang> lstGioHang = Session["GioHang"] as List<GioHang>;
+            List<Cart> lstGioHang = Session["GioHang"] as List<Cart>;
             if (lstGioHang != null)
 			{
                 amount = lstGioHang.Sum(s => s.qSanPham);
@@ -56,7 +56,7 @@ namespace DoAn.Areas.Admin.Controllers
         private double Total()
 		{
             double total = 0;
-            List<GioHang> lstGioHang = Session["GioHang"] as List<GioHang>;
+            List<Cart> lstGioHang = Session["GioHang"] as List<Cart>;
             if(lstGioHang != null)
 			{
                 total = lstGioHang.Sum(s => s.pSanPham);
@@ -67,7 +67,7 @@ namespace DoAn.Areas.Admin.Controllers
         // GET: Admin/GioHang
         public ActionResult GioHang()
         {
-            List<GioHang> lstGioHang = GetGioHang();
+            List<Cart> lstGioHang = GetGioHang();
             if(lstGioHang.Count == 0)
 			{
                 return RedirectToAction("Table", "Home");

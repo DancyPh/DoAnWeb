@@ -2,33 +2,31 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using DoAn.Models;
 
 namespace DoAn.Models
 {
-	public class GioHang
-	{
-		QLPizzaDataContext data = new QLPizzaDataContext();
+    public class Giohang
+    {
+        QLPizzaDataContext db = new QLPizzaDataContext();
 
-		public int iSanPham { get; set; }
-		public string nSanPham { get; set; }
-		public string imgSanPham { get; set; }
-		public double pSanPham { get; set; }
-		public int qSanPham { get; set; }
-		public double tThanhTien
-		{
-			get { return pSanPham * qSanPham; }
-		}
+        public int imaSanPham { get; set; }
+        public string stenSanPham { get; set; }
+        public string shinhanh { get; set; }
+        public double dgia { get; set; }
+        public int isoLuong { get; set; }
+        public double dthanhTien
+        {
+            get { return isoLuong * dgia; }
+        }
 
-		public GioHang(int id)
-		{
-			iSanPham = id;
-			SanPham pro = data.SanPhams.Single(i => i.maSanPham == iSanPham);
-			nSanPham = pro.tenSanPham;
-			imgSanPham = pro.hinhanh;
-			pSanPham = double.Parse(pro.gia.ToString());
-			qSanPham = 1;
-		}
-	}
-
+        public Giohang(int ms)
+        {
+            imaSanPham = ms;
+            SanPham s = db.SanPhams.Single(n => n.maSanPham == imaSanPham);
+            stenSanPham = s.tenSanPham;
+            shinhanh = s.hinhanh;
+            dgia = double.Parse(s.gia.ToString());
+            isoLuong = 1;
+        }
+    }
 }
