@@ -588,11 +588,6 @@
     <Content Include="images\pizza-8.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Models\QLPizza.dbml">
-      <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>QLPizza.designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </Content>
     <Content Include="Areas\Admin\Views\web.config" />
     <Content Include="Areas\Admin\Views\Shared\_AdminLayout.cshtml" />
     <Content Include="Areas\Admin\Views\Account\Login.cshtml" />
@@ -704,6 +699,11 @@
     <Content Include="icon\themify-icons\fonts\themify.woff" />
     <Content Include="icon\themify-icons\Themify IconFonts 5-23-2014.json" />
     <Content Include="images\.DS_Store" />
+    <Content Include="Models\QLPizza.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>QLPizza.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="Models\QLPizza.dbml.layout">
       <DependentUpon>QLPizza.dbml</DependentUpon>
     </None>
