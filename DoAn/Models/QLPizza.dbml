@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QLPizza" Class="QLPizzaDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="WebSettings" ConnectionString="Data Source=45.119.85.244;Initial Catalog=QLPizza;User ID=QLPizza" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="QLPizzaConnectionString1" Provider="System.Data.SqlClient" />
+  <Connection Mode="WebSettings" ConnectionString="Data Source=45.119.85.244;Initial Catalog=QLPizza;Persist Security Info=True;User ID=QLPizza" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="QLPizzaConnectionString2" Provider="System.Data.SqlClient" />
   <Table Name="dbo.Ban" Member="Bans">
     <Type Name="Ban">
       <Column Name="maBan" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -27,8 +27,8 @@
       <Column Name="maSanPham" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="soLuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="thanhTien" Type="System.Decimal" DbType="Money" CanBeNull="true" />
-      <Association Name="DonHang_ChiTietDonHang" Member="DonHang" ThisKey="maDonHang" OtherKey="maDonHang" Type="DonHang" IsForeignKey="true" />
       <Association Name="SanPham_ChiTietDonHang" Member="SanPham" ThisKey="maSanPham" OtherKey="maSanPham" Type="SanPham" IsForeignKey="true" />
+      <Association Name="DonHang_ChiTietDonHang" Member="DonHang" ThisKey="maDonHang" OtherKey="maDonHang" Type="DonHang" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.DatBan" Member="DatBans">
@@ -42,20 +42,6 @@
       <Column Name="soLuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="Ban_DatBan" Member="Ban" ThisKey="maBan" OtherKey="maBan" Type="Ban" IsForeignKey="true" />
       <Association Name="KhachHang_DatBan" Member="KhachHang" ThisKey="maKhachHang" OtherKey="maKhachHang" Type="KhachHang" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.DonHang" Member="DonHangs">
-    <Type Name="DonHang">
-      <Column Name="maDonHang" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="maKhachHang" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="maBan" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="ngayDatHang" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="tongTien" Type="System.Decimal" DbType="Money" CanBeNull="true" />
-      <Column Name="IsConfirmed" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Association Name="DonHang_ChiTietDonHang" Member="ChiTietDonHangs" ThisKey="maDonHang" OtherKey="maDonHang" Type="ChiTietDonHang" />
-      <Association Name="DonHang_GiaoHang" Member="GiaoHangs" ThisKey="maDonHang" OtherKey="maDonHang" Type="GiaoHang" />
-      <Association Name="Ban_DonHang" Member="Ban" ThisKey="maBan" OtherKey="maBan" Type="Ban" IsForeignKey="true" />
-      <Association Name="KhachHang_DonHang" Member="KhachHang" ThisKey="maKhachHang" OtherKey="maKhachHang" Type="KhachHang" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.GiaoHang" Member="GiaoHangs">
@@ -140,6 +126,20 @@
       <Column Name="tenSanPham" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="soLuongCL" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="SanPham_TonKho" Member="SanPham" ThisKey="maSanPham" OtherKey="maSanPham" Type="SanPham" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DonHang" Member="DonHangs">
+    <Type Name="DonHang">
+      <Column Name="maDonHang" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="maKhachHang" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="maBan" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ngayDatHang" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="tongTien" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="IsConfirmed" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="DonHang_ChiTietDonHang" Member="ChiTietDonHangs" ThisKey="maDonHang" OtherKey="maDonHang" Type="ChiTietDonHang" />
+      <Association Name="DonHang_GiaoHang" Member="GiaoHangs" ThisKey="maDonHang" OtherKey="maDonHang" Type="GiaoHang" />
+      <Association Name="Ban_DonHang" Member="Ban" ThisKey="maBan" OtherKey="maBan" Type="Ban" IsForeignKey="true" />
+      <Association Name="KhachHang_DonHang" Member="KhachHang" ThisKey="maKhachHang" OtherKey="maKhachHang" Type="KhachHang" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>
