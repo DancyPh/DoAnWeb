@@ -2,12 +2,6 @@
 <ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 12.75, 10.125" name="QLPizza">
   <DataContextMoniker Name="/QLPizzaDataContext" />
   <nestedChildShapes>
-    <classShape Id="e653efe3-1ac5-467a-9ee0-3557f8c9451c" absoluteBounds="7.125, 3.375, 2, 1.7708968098958331">
-      <DataClassMoniker Name="/QLPizzaDataContext/Ban" />
-      <nestedChildShapes>
-        <elementListCompartment Id="2f18e2c2-bb8f-4a40-9f6c-3a93f69dc30d" absoluteBounds="7.14, 3.835, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
     <classShape Id="fd7cf391-11f1-41e0-966b-64579b2386c6" absoluteBounds="2.875, 1, 2, 1.5785953776041666">
       <DataClassMoniker Name="/QLPizzaDataContext/ChamCong" />
       <nestedChildShapes>
@@ -26,13 +20,6 @@
         <elementListCompartment Id="18ca1b65-f416-4b4e-a3d9-93f75e883de0" absoluteBounds="0.51500000000000012, 4.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(7.125 : 5.1194482421875); (6.61458583333333 : 5.1194482421875 : JumpStart); (6.44791916666667 : 5.1194482421875 : JumpEnd); (6.02083333333333 : 5.1194482421875 : JumpStart); (5.85416666666667 : 5.1194482421875 : JumpEnd); (5.58333083333333 : 5.1194482421875 : JumpStart); (5.41666416666667 : 5.1194482421875 : JumpEnd); (2.70833333333333 : 5.1194482421875 : JumpStart); (2.54166666666667 : 5.1194482421875 : JumpEnd); (2.5 : 5.1194482421875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/QLPizzaDataContext/Ban/Ban_DatBan" />
-      <nodes>
-        <classShapeMoniker Id="e653efe3-1ac5-467a-9ee0-3557f8c9451c" />
-        <classShapeMoniker Id="66c82ab1-aa7d-41bb-a535-dc119db29f4c" />
-      </nodes>
-    </associationConnector>
     <classShape Id="c13484a6-c8b9-4627-ad8e-3368b52e8030" absoluteBounds="0.5, 0.875, 2, 1.5785953776041666">
       <DataClassMoniker Name="/QLPizzaDataContext/GiaoHang" />
       <nestedChildShapes>
@@ -45,7 +32,7 @@
         <elementListCompartment Id="87af0c26-9f47-4529-8e65-47c24f02dc3b" absoluteBounds="10.015, 2.71, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(11 : 4.2131982421875); (11 : 5.51044840494792); (10.3020833333333 : 5.51044840494792 : JumpStart); (10.1354166666667 : 5.51044840494792 : JumpEnd); (8.20833333333333 : 5.51044840494792 : JumpStart); (8.04166666666667 : 5.51044840494792 : JumpEnd); (6.61458583333333 : 5.51044840494792 : JumpStart); (6.44791916666667 : 5.51044840494792 : JumpEnd); (6.02083333333333 : 5.51044840494792 : JumpStart); (5.85416666666667 : 5.51044840494792 : JumpEnd); (5.58333083333333 : 5.51044840494792 : JumpStart); (5.41666416666667 : 5.51044840494792 : JumpEnd); (4.83333333333333 : 5.51044840494792 : JumpStart); (4.66666666666667 : 5.51044840494792 : JumpEnd); (2.5 : 5.51044840494792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(11.2656265 : 4.2131982421875); (11.2656265 : 5.73640055338542); (10.5520813333333 : 5.73640055338542 : JumpStart); (10.3854146666667 : 5.73640055338542 : JumpEnd); (9.41145652083333 : 5.73640055338542 : JumpStart); (9.24478985416667 : 5.73640055338542 : JumpEnd); (9.20833308333333 : 5.73640055338542 : JumpStart); (9.04166641666667 : 5.73640055338542 : JumpEnd); (6.95833708333333 : 5.73640055338542 : JumpStart); (6.79167041666667 : 5.73640055338542 : JumpEnd); (6.64583583333333 : 5.73640055338542 : JumpStart); (6.47916916666667 : 5.73640055338542 : JumpEnd); (6.05208208333333 : 5.73640055338542 : JumpStart); (5.88541541666667 : 5.73640055338542 : JumpEnd); (2.5 : 5.73640055338542)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/QLPizzaDataContext/KhachHang/KhachHang_DatBan" />
       <nodes>
         <classShapeMoniker Id="b3f743fc-7e89-429b-841d-55856829639e" />
@@ -64,40 +51,27 @@
         <elementListCompartment Id="40043dd4-719f-49c5-bb0c-39c05e37182c" absoluteBounds="10.515, 6.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="85ff8575-af20-4493-8348-368a2a353c62" absoluteBounds="2.875, 2.875, 2, 2.1554996744791666">
-      <DataClassMoniker Name="/QLPizzaDataContext/NhanVien" />
-      <nestedChildShapes>
-        <elementListCompartment Id="16f8926c-4ee8-4022-a86c-bdcfd8a59156" absoluteBounds="2.8900000000000006, 3.335, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <associationConnector edgePoints="[(3.875 : 2.875); (3.875 : 2.57859537760417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/QLPizzaDataContext/NhanVien/NhanVien_ChamCong" />
-      <nodes>
-        <classShapeMoniker Id="85ff8575-af20-4493-8348-368a2a353c62" />
-        <classShapeMoniker Id="fd7cf391-11f1-41e0-966b-64579b2386c6" />
-      </nodes>
-    </associationConnector>
     <classShape Id="3c963c6b-e4c3-4196-b585-787c94a8eaa9" absoluteBounds="5.125, 0.5, 2, 2.5401025390625">
       <DataClassMoniker Name="/QLPizzaDataContext/SanPham" />
       <nestedChildShapes>
         <elementListCompartment Id="2c62ae1a-de24-4055-b5dc-9ff9a10a7885" absoluteBounds="5.14, 0.96, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(5.9375 : 3.0401025390625); (5.9375 : 7.39829752604167); (5.58333083333333 : 7.39829752604167 : JumpStart); (5.41666416666667 : 7.39829752604167 : JumpEnd); (4.83333333333333 : 7.39829752604167 : JumpStart); (4.66666666666667 : 7.39829752604167 : JumpEnd); (4.5 : 7.39829752604167)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.96874875 : 3.0401025390625); (5.96874875 : 6.44332188151042); (4.5 : 6.44332188151042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/QLPizzaDataContext/SanPham/SanPham_ChiTietDonHang" />
       <nodes>
         <classShapeMoniker Id="3c963c6b-e4c3-4196-b585-787c94a8eaa9" />
         <classShapeMoniker Id="210e706a-62be-4f3f-8b6e-738b31526636" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(8.375 : 1.69314697265625); (7.125 : 1.69314697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(8.375 : 1.69314697265625); (7.125 : 1.69314697265625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/QLPizzaDataContext/KichThuoc/KichThuoc_SanPham" />
       <nodes>
         <classShapeMoniker Id="b008580f-d3e7-44ed-9e6d-423b93084760" />
         <classShapeMoniker Id="3c963c6b-e4c3-4196-b585-787c94a8eaa9" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(12.28125 : 6.5); (12.28125 : 0.71875); (7.125 : 0.71875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(12.28125 : 6.5); (12.28125 : 0.71875); (7.125 : 0.71875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/QLPizzaDataContext/Loai/Loai_SanPham" />
       <nodes>
         <classShapeMoniker Id="4ca99c28-30ac-4701-8a87-5afc964771d9" />
@@ -110,7 +84,7 @@
         <elementListCompartment Id="1c93debd-5b1b-4d0d-ac6a-bc793802811d" absoluteBounds="1.2650000000000001, 8.085, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(3.25 : 8.51849609375); (5.4999975 : 8.51849609375); (5.4999975 : 3.0401025390625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(3.25 : 8.35984537760417); (6.47916916666667 : 8.35984537760417 : JumpStart); (6.64583583333333 : 8.35984537760417 : JumpEnd); (6.87500375 : 8.35984537760417); (6.87500375 : 3.0401025390625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/QLPizzaDataContext/ThanhPhan/ThanhPhan_SanPham" />
       <nodes>
         <classShapeMoniker Id="5b08f3f1-1eaa-473d-b496-41cfe612a6b0" />
@@ -123,45 +97,71 @@
         <elementListCompartment Id="0d7760b8-6eb8-43ac-b7c2-ebb28af991fe" absoluteBounds="9.265, 8.71, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(6.5312525 : 3.0401025390625); (6.5312525 : 9.17354573567708); (9.25 : 9.17354573567708)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(6.5625025 : 3.0401025390625); (6.5625025 : 9.36464680989583); (9.25 : 9.36464680989583)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/QLPizzaDataContext/SanPham/SanPham_TonKho" />
       <nodes>
         <classShapeMoniker Id="3c963c6b-e4c3-4196-b585-787c94a8eaa9" />
         <classShapeMoniker Id="f3ded0e3-035f-4d4a-90aa-0f08e42b3a52" />
       </nodes>
     </associationConnector>
-    <classShape Id="128e1c6a-dc49-4483-91fc-02d48a1f161c" absoluteBounds="7.125, 6.125, 2, 1.9631982421875">
-      <DataClassMoniker Name="/QLPizzaDataContext/DonHang" />
+    <classShape Id="af9cec42-1536-465e-be2a-9bed5797f1e0" absoluteBounds="7.75, 3.25, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/QLPizzaDataContext/Ban" />
       <nestedChildShapes>
-        <elementListCompartment Id="df2baafd-227e-45a5-9153-2d8db035fc1c" absoluteBounds="7.14, 6.585, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="3ef620c4-6cf2-48b7-905b-e8f3cfefe9cb" absoluteBounds="7.7650000000000006, 3.71, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(7.125 : 6.69914876302083); (6.61458583333333 : 6.69914876302083 : JumpStart); (6.44791916666667 : 6.69914876302083 : JumpEnd); (6.02083333333333 : 6.69914876302083 : JumpStart); (5.85416666666667 : 6.69914876302083 : JumpEnd); (5.58333083333333 : 6.69914876302083 : JumpStart); (5.41666416666667 : 6.69914876302083 : JumpEnd); (4.83333333333333 : 6.69914876302083 : JumpStart); (4.66666666666667 : 6.69914876302083 : JumpEnd); (4.5 : 6.69914876302083)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(8.406247375 : 4.82859537760417); (8.406247375 : 5.70514805338542); (6.95833708333333 : 5.70514805338542 : JumpStart); (6.79167041666667 : 5.70514805338542 : JumpEnd); (6.64583583333333 : 5.70514805338542 : JumpStart); (6.47916916666667 : 5.70514805338542 : JumpEnd); (6.05208208333333 : 5.70514805338542 : JumpStart); (5.88541541666667 : 5.70514805338542 : JumpEnd); (2.5 : 5.70514805338542)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/QLPizzaDataContext/Ban/Ban_DatBan" />
+      <nodes>
+        <classShapeMoniker Id="af9cec42-1536-465e-be2a-9bed5797f1e0" />
+        <classShapeMoniker Id="66c82ab1-aa7d-41bb-a535-dc119db29f4c" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="a0f262b4-b604-47b3-811d-179d353dafe0" absoluteBounds="8.25, 6.875, 2, 1.9631982421875">
+      <DataClassMoniker Name="/QLPizzaDataContext/DonHang" />
+      <nestedChildShapes>
+        <elementListCompartment Id="bd3c3d99-4988-420a-951d-7903b6cdc82d" absoluteBounds="8.265, 7.335, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(8.25 : 7.07414876302084); (6.95833708333333 : 7.07414876302084 : JumpStart); (6.79167041666667 : 7.07414876302084 : JumpEnd); (6.64583583333333 : 7.07414876302084 : JumpStart); (6.47916916666667 : 7.07414876302084 : JumpEnd); (4.5 : 7.07414876302084)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/QLPizzaDataContext/DonHang/DonHang_ChiTietDonHang" />
       <nodes>
-        <classShapeMoniker Id="128e1c6a-dc49-4483-91fc-02d48a1f161c" />
+        <classShapeMoniker Id="a0f262b4-b604-47b3-811d-179d353dafe0" />
         <classShapeMoniker Id="210e706a-62be-4f3f-8b6e-738b31526636" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(7.125 : 7.74324738411458); (6.61458583333333 : 7.74324738411458 : JumpStart); (6.44791916666667 : 7.74324738411458 : JumpEnd); (5.58333083333333 : 7.74324738411458 : JumpStart); (5.41666416666667 : 7.74324738411458 : JumpEnd); (4.75 : 7.74324738411458); (4.75 : 5.28049967447917); (2.625 : 5.28049967447917); (2.625 : 3.5); (1.5 : 3.5); (1.5 : 2.45359537760417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(9.3281231875 : 6.875); (9.3281231875 : 4.89109537760417); (7.1875 : 4.89109537760417); (7.1875 : 0.4375); (2.59375 : 0.4375); (2.59375 : 1.66429768880208); (2.5 : 1.66429768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/QLPizzaDataContext/DonHang/DonHang_GiaoHang" />
       <nodes>
-        <classShapeMoniker Id="128e1c6a-dc49-4483-91fc-02d48a1f161c" />
+        <classShapeMoniker Id="a0f262b4-b604-47b3-811d-179d353dafe0" />
         <classShapeMoniker Id="c13484a6-c8b9-4627-ad8e-3368b52e8030" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(8.125 : 5.14589680989583); (8.125 : 6.125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(9.12499975 : 4.82859537760417); (9.12499975 : 6.875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/QLPizzaDataContext/Ban/Ban_DonHang" />
       <nodes>
-        <classShapeMoniker Id="e653efe3-1ac5-467a-9ee0-3557f8c9451c" />
-        <classShapeMoniker Id="128e1c6a-dc49-4483-91fc-02d48a1f161c" />
+        <classShapeMoniker Id="af9cec42-1536-465e-be2a-9bed5797f1e0" />
+        <classShapeMoniker Id="a0f262b4-b604-47b3-811d-179d353dafe0" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(10.21875 : 4.2131982421875); (10.21875 : 6.28125); (9.125 : 6.28125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(10.468748 : 4.2131982421875); (10.468748 : 6.4375); (10.4375 : 6.4375); (10.4375 : 7.85659912109375); (10.25 : 7.85659912109375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/QLPizzaDataContext/KhachHang/KhachHang_DonHang" />
       <nodes>
         <classShapeMoniker Id="b3f743fc-7e89-429b-841d-55856829639e" />
-        <classShapeMoniker Id="128e1c6a-dc49-4483-91fc-02d48a1f161c" />
+        <classShapeMoniker Id="a0f262b4-b604-47b3-811d-179d353dafe0" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="d2dc7534-ba8e-43e0-9f57-079ad7a14698" absoluteBounds="3.375, 3.25, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/QLPizzaDataContext/NhanVien" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b473e54e-96c4-4059-ae55-9fd027789b4d" absoluteBounds="3.39, 3.71, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(4.125 : 3.25); (4.125 : 2.57859537760417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/QLPizzaDataContext/NhanVien/NhanVien_ChamCong" />
+      <nodes>
+        <classShapeMoniker Id="d2dc7534-ba8e-43e0-9f57-079ad7a14698" />
+        <classShapeMoniker Id="fd7cf391-11f1-41e0-966b-64579b2386c6" />
       </nodes>
     </associationConnector>
   </nestedChildShapes>
