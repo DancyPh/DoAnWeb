@@ -109,6 +109,61 @@ namespace DoAn.Controllers
             return RedirectToAction("Index", "Home");
         }
 
+        [HttpGet]
+        public ActionResult DatHang()
+        {
+            if (Session["TaiKhoan"] == null || Session["TaiKhoan"].ToString() == "")
+            {
+                return Redirect("~/User/DangNhap?id=2");
+            }
+            if (Session["TaiKhoan"] == null || Session["TaiKhoan"].ToString() == "")
+            {
+                return RedirectToAction("Dangnhap", "User");
+            }
+            if (Session["GioHang"] == null)
+            {
+                return RedirectToAction("Index", "SachOnline");
+            }
+            List<Giohang> lstGiohang = Laygiohang();
+            ViewBag.Tongsoluong = Tongsoluong();
+            ViewBag.Tongtien = Tongtien();
+            return View(lstGiohang);
+        }
+
+        [HttpPost]
+        public ActionResult DatHang(FormCollection f)
+        {
+            bool check = false;
+            GiaoHang gh = new GiaoHang();
+            DonHang dh = new DonHang();
+            KhachHang kh = (KhachHang)Session["TaiKhoan"];
+            List<Giohang> lstGiohang = Laygiohang();
+            dh.maKhachHang = kh.maKhachHang;
+            dh.ngayDatHang = DateTime.Now;
+            var Ngaygiao = String.Format("{0:MM/dd/yyyy}", f["Ngaygiao"]);
+            gh.ngayGiao = DateTime.Parse(Ngaygiao);
+            dh.IsConfirmed = check;
+            db.DonHangs.InsertOnSubmit(dh);
+            db.SubmitChanges();
+            foreach (var item in lstGiohang)
+            {
+                ChiTietDonHang ctdh = new ChiTietDonHang();
+                ctdh.maDonHang = dh.maDonHang;
+                ctdh.maSanPham = item.imaSanPham;
+                ctdh.soLuong = item.isoLuong;
+                ctdh.thanhTien = (decimal)item.dthanhTien;
+                db.ChiTietDonHangs.InsertOnSubmit(ctdh);
+            }
+            db.SubmitChanges();
+            Session["GioHang"] = null;
+            return RedirectToAction("XacNhanDonHang", "GioHang");
+        }
+
+        public ActionResult XacNhanDonHang()
+        {
+            return View();
+        }
+
 
         // GET: GioHang
         public ActionResult Index()

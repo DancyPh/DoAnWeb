@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    h1 {
+        color: #FF4500;
+        margin: 20px;
+    }
+
+    form {
+        margin: 0px 20px;
+        
+    }
+
+    label {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+</style>
+
+<h1>Đặt bàn Pizza</h1>
+
+<form id="reservation-form">
+    <label for="name">Tên:</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="date">Ngày:</label>
+    <input type="date" id="date" name="date" required>
+
+    <label for="time">Thời gian:</label>
+    <input type="time" id="time" name="time" required>
+
+    <label for="number-of-guests">Số lượng khách:</label>
+    <input type="number" id="number-of-guests" name="number-of-guests" required>
+    <br />
+    <input style=" margin: 10px 0px;" type="submit" value="Đặt bàn">
+</form>
