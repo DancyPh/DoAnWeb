@@ -15,6 +15,19 @@ namespace DoAn.Controllers
             return db.SanPhams.OrderByDescending(a => a.soLuong).Take(count).ToList();
         }
 
+        private List<SanPham> LaySp(int count)
+        {
+            return db.SanPhams.OrderByDescending(a => a.maSanPham).Take(count).ToList();
+        }
+
+
+        [HttpGet]
+        public ActionResult OurSanPham()
+        {
+            var list = LaySp(6);
+            return View(list);
+        }
+
 
         [HttpGet]
         // GET: Menu

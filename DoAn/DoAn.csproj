@@ -767,6 +767,7 @@
     <Content Include="Views\GioHang\DatHang.cshtml" />
     <Content Include="Views\GioHang\XacNhanDonHang.cshtml" />
     <Content Include="Views\DatBan\Index.cshtml" />
+    <Content Include="Views\Menu\OurSanPham.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

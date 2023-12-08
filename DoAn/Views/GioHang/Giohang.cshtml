@@ -29,7 +29,6 @@
             <td>Tên Sản Phẩm</td>
             <td>Ảnh Bìa</td>
             <td>Số Lượng</td>
-            <td>Kích thước</td>
             <td>Đơn Giá</td>
             <td>Thành Tiền</td>
             <td></td>
@@ -48,7 +47,6 @@
             <td align="center">
                 <input type="number" min="1" name="txtSoLuong" value="@item.isoLuong" style="background-color:#f4ff94" />
             </td>
-            <td align="center">@item.ikichthuoc</td>
             <td align="center">@string.Format("{0:#,##0,0}", @item.dgia)</td>
             <td align="center">@string.Format("{0:#,##0,0}", @item.dthanhTien)</td>
             <td><a href="@Url.Action("ChiTietSanPham","Home", new { id = item. imaSanPham})">Chi tiết</a></td>
