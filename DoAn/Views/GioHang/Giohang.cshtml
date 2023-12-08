@@ -49,7 +49,7 @@
             </td>
             <td align="center">@string.Format("{0:#,##0,0}", @item.dgia)</td>
             <td align="center">@string.Format("{0:#,##0,0}", @item.dthanhTien)</td>
-            <td><a href="@Url.Action("ChiTietSach","SachOnline", new { id = item. imaSanPham})">Chi tiết</a></td>
+            <td><a href="@Url.Action("ChiTietSanPham","Home", new { id = item. imaSanPham})">Chi tiết</a></td>
             <td>
                 @Html.ActionLink("Xóa", "XoaSPKhoiGioHang", new { @imaSanPham = item.imaSanPham })
             </td>

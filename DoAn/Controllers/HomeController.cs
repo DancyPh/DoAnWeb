@@ -21,7 +21,7 @@ namespace DoAn.Controllers
 
         public ActionResult ChiTietSanPham(int ?id)
         {
-            var sp = data.SanPhams.Where(s => s.maSanPham == id);
+            var sp = data.SanPhams.FirstOrDefault(s => s.maSanPham == id);
             if(sp == null)
             {
                 return HttpNotFound();

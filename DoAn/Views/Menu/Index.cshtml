@@ -43,7 +43,7 @@
                     <div class="services-wrap d-flex">
                         <img src="~/images/@i.hinhanh" class="img_pro" />
                         <div class="text p-4">
-                            <h3>@i.tenSanPham</h3>
+                            <h3><a style="color: #fff;" href="@Url.Action("ChitietSanPham","Home", new { id = i.maSanPham })">@i.tenSanPham</a></h3>
                             <p>@i.mota </p>
                             <p class="price"><span>@i.gia</span> <a href="@Url.Action("ThemGioHang","GioHang", new { ms = i.maSanPham, url = Request.Url.ToString()})" class="ml-2 btn btn-white btn-outline-white">Order</a></p>
                         </div>
