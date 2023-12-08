@@ -219,11 +219,7 @@
                                 </h3>
                                 <h4 class="price" style="color: #333;">Giá: <span>@Model.gia</span></h4>
                                 <p class="vote">
-                                    <strong>100%</strong> hàng <strong>Chất lượng</strong>, đảm bảo
-                                    <strong>
-                                        Uy
-                                        tín
-                                    </strong>!
+                                    @Model.mota
                                 </p>
                                 <h5 class="sizes" style="color: #333;">
                                     sizes:
@@ -232,6 +228,10 @@
                                     <span class="size" data-toggle="tooltip" title="cỡ Lớn">l</span>
                                     <span class="size" data-toggle="tooltip" title="cỡ Đại">xl</span>
                                 </h5>
+                                <div class="form-group">
+                                    <label for="soluong">Số lượng đặt mua:</label>
+                                    <input type="number" min="1" class="form-control" id="soluong" name="soluong">
+                                </div>
                                 <div class="action">
                                     <a class="add-to-cart btn btn-default" id="btnThemVaoGioHang" href="@Url.Action("ThemGioHang","GioHang", new { ms = @Model.maSanPham, url = Request.Url.ToString()})">Thêm vào giỏ hàng</a>
                                 </div>
