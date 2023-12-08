@@ -54,15 +54,44 @@ namespace DoAn.Areas.Admin.Controllers
 
         // total
         private double Total()
-		{
+        {
             double total = 0;
             List<Cart> lstGioHang = Session["GioHang"] as List<Cart>;
-            if(lstGioHang != null)
-			{
-                total = lstGioHang.Sum(s => s.pSanPham);
-			}
+            if (lstGioHang != null)
+            {
+                total = lstGioHang.Sum(s => s.tThanhTien);
+            }
+
+            Session["Total"] = total; // Cập nhật tổng tiền trong Session
+
             return total;
-		}
+        }
+
+        // update
+        public ActionResult UpdateCart(int iSanPham, FormCollection f)
+        {
+            List<Cart> lstGioHang = GetGioHang();
+            Cart sp = lstGioHang.SingleOrDefault(n => n.iSanPham == iSanPham);
+            if (sp != null)
+            {
+                sp.qSanPham = int.Parse(f["quantity"].ToString());
+            }
+            return RedirectToAction("GioHang");
+        }
+
+        // delete one product
+        public ActionResult DeleteOneProduct(int iSanPham)
+        {
+            List<Cart> lstGioHang = GetGioHang();
+            Cart sp = lstGioHang.SingleOrDefault(n => n.iSanPham == iSanPham);
+            if(sp != null)
+            {
+                lstGioHang.RemoveAll(n => n.iSanPham == iSanPham);
+               
+            }
+            return RedirectToAction("GioHang");
+        }
+
 
         // GET: Admin/GioHang
         public ActionResult GioHang()
@@ -76,6 +105,8 @@ namespace DoAn.Areas.Admin.Controllers
             ViewBag.Total = Total();
             return View(lstGioHang);
         }
+
+
 
         public ActionResult GioHangPartial()
 		{
