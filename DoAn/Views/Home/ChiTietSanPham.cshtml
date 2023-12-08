@@ -1,149 +1,282 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "ChiTietSanPham";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <style>
-    body {
-        font-family: Arial, Helvetica, sans-serif;
-    }
+    img {
+    max-width: 100%;
+}
 
-    /* Full-width input fields */
-    input[type=text], input[type=password] {
-        width: 100%;
-        padding: 12px 20px;
-        margin: 8px 0;
-        display: inline-block;
-        border: 1px solid #ccc;
-        box-sizing: border-box;
-    }
+.preview {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
 
-    /* Set a style for all buttons */
-    button {
-        background-color: #04AA6D;
-        color: white;
-        padding: 14px 20px;
-        margin: 8px 0;
-        border: none;
-        cursor: pointer;
-        width: 100%;
-    }
+.preview-pic {
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    max-height: 300px;
+}
 
-        button:hover {
-            opacity: 0.8;
-        }
+.preview-thumbnail.nav-tabs {
+    border: none;
+    margin-top: 15px;
+}
 
-    /* Extra styles for the cancel button */
-    .cancelbtn {
-        width: auto;
-        padding: 10px 18px;
-        background-color: #f44336;
-    }
+.preview-thumbnail.nav-tabs li {
+    width: 18%;
+    margin-right: 2.5%;
+}
 
-    /* Center the image and position the close button */
-    .imgcontainer {
-        text-align: center;
-        margin: 24px 0 12px 0;
-        position: relative;
-    }
+.preview-thumbnail.nav-tabs li img {
+    max-width: 100%;
+    display: block;
+}
 
-    img.avatar {
-        width: 40%;
-        border-radius: 50%;
-    }
+.preview-thumbnail.nav-tabs li a {
+    padding: 0;
+    margin: 0;
+}
 
-    .container {
-        padding: 16px;
-    }
+.preview-thumbnail.nav-tabs li:last-of-type {
+    margin-right: 0;
+}
 
-    span.psw {
-        float: right;
-        padding-top: 16px;
-    }
+.tab-content {
+    overflow: hidden;
+}
 
-    /* The Modal (background) */
-    .modal {
-        display: none; /* Hidden by default */
-        position: fixed; /* Stay in place */
-        z-index: 1; /* Sit on top */
-        left: 0;
-        top: 0;
-        width: 100%; /* Full width */
-        height: 100%; /* Full height */
-        overflow: auto; /* Enable scroll if needed */
-        background-color: rgb(0,0,0); /* Fallback color */
-        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-        padding-top: 60px;
-    }
+.tab-content img {
+    width: 100%;
+    -webkit-animation-name: opacity;
+    animation-name: opacity;
+    -webkit-animation-duration: .3s;
+    animation-duration: .3s;
+}
 
-    /* Modal Content/Box */
-    .modal-content {
-        background-color: #fefefe;
-        margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
-        border: 1px solid #888;
-        width: 80%; /* Could be more or less, depending on screen size */
-    }
+.card {
+    background: #eee;
+    padding: 3em;
+    line-height: 1.5em;
+}
 
-    /* The Close Button (x) */
-    .close {
-        position: absolute;
-        right: 25px;
-        top: 0;
-        color: #000;
-        font-size: 35px;
-        font-weight: bold;
-    }
+.details {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
 
-        .close:hover,
-        .close:focus {
-            color: red;
-            cursor: pointer;
-        }
+.colors {
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+}
 
-    /* Add Zoom Animation */
-    .animate {
-        -webkit-animation: animatezoom 0.6s;
-        animation: animatezoom 0.6s
-    }
+.product-title,
+.price,
+.sizes,
+.colors {
+    text-transform: UPPERCASE;
+    font-weight: bold;
+}
 
-    .header {
+.checked,
+.price span {
+    color: #333;
+}
+
+.product-title,
+.rating,
+.product-description,
+.price,
+.vote,
+.sizes {
+    margin-bottom: 15px;
+}
+
+.product-title {
+    margin-top: 0;
+}
+
+.size {
+    margin-right: 10px;
+}
+
+.size:first-of-type {
+    margin-left: 40px;
+}
+
+.color {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+    height: 2em;
+    width: 2em;
+    border-radius: 2px;
+}
+
+.color:first-of-type {
+    margin-left: 20px;
+}
+
+.add-to-cart,
+.like {
+    background: #ff9f1a;
+    padding: 1.2em 1.5em;
+    border: none;
+    text-transform: UPPERCASE;
+    font-weight: bold;
+    color: #fff;
+    -webkit-transition: background .3s ease;
+    transition: background .3s ease;
+}
+
+    .add-to-cart:hover,
+    .like:hover {
+        background: #b36800;
         color: #333;
-        margin: 20px;
     }
 
-    .footer_login {
-        display: flex;
-        justify-content: space-between;
+.not-available {
+    text-align: center;
+    line-height: 2em;
+}
+
+    .not-available:before {
+        font-family: fontawesome;
+        content: "\f00d";
+        color: #333;
     }
 
-    .btn_cancel_link {
-        color: #fff;
-    }
+.orange {
+    background: #ff9f1a;
+}
+
+.green {
+    background: #85ad00;
+}
+
+.blue {
+    background: #0076ad;
+}
+
+.tooltip-inner {
+    padding: 1.3em;
+}
 </style>
 
+<main role="main">
+    <!-- Block content - Đục lỗ trên giao diện bố cục chung, đặt tên là `content` -->
+    <div class="container mt-4">      
+            <div class="card">
+                <div class="container-fliud">
+                    <form name="frmsanphamchitiet" id="frmsanphamchitiet" method="post"
+                          action="/php/twig/frontend/giohang/themvaogiohang">
+                        <input type="hidden" name="sp_ma" id="sp_ma" value="5">
+                        <input type="hidden" name="sp_ten" id="sp_ten" value="Samsung Galaxy Tab 10.1 3G 16G">
+                        <input type="hidden" name="sp_gia" id="sp_gia" value="10990000.00">
+                        <input type="hidden" name="hinhdaidien" id="hinhdaidien" value="samsung-galaxy-tab-10.jpg">
 
-<form action="action_page.php" method="post">
-    <h2 style="margin: 10px 0px; display: flex; justify-content:center;">Yêu cầu mua thêm sách mới</h2>
-    <div class="container">
-        <label for="psw"><b>Tên tên khoản</b></label>
-        <input type="text" name="psw" required>
+                        <div class="wrapper row">
+                            <div class="preview col-md-6">
+                                <div class="preview-pic tab-content">
+                                    <div class="tab-pane" id="pic-1">
+                                        <img src="../assets/img/product/samsung-galaxy-tab-10.jpg">
+                                    </div>
+                                    <div class="tab-pane" id="pic-2">
+                                        <img src="../assets/img/product/samsung-galaxy-tab.jpg">
+                                    </div>
+                                    <div class="tab-pane active" id="pic-3">
+                                        <img src="../assets/img/product/samsung-galaxy-tab-4.jpg">
+                                    </div>
+                                </div>
+                                <ul class="preview-thumbnail nav nav-tabs">
+                                    <li class="active">
+                                        <a data-target="#pic-1" data-toggle="tab" class="">
+                                            <img src="../assets/img/product/samsung-galaxy-tab-10.jpg">
+                                        </a>
+                                    </li>
+                                    <li class="">
+                                        <a data-target="#pic-2" data-toggle="tab" class="">
+                                            <img src="../assets/img/product/samsung-galaxy-tab.jpg">
+                                        </a>
+                                    </li>
+                                    <li class="">
+                                        <a data-target="#pic-3" data-toggle="tab" class="active">
+                                            <img src="../assets/img/product/samsung-galaxy-tab-4.jpg">
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="details col-md-6">
+                                <h3 class="product-title" style="color: #333;">@Model.tenSanPham</h3>
+                                <div class="rating">
+                                    <div class="stars">
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star"></span>
+                                        <span class="fa fa-star"></span>
+                                    </div>
+                                    <span class="review-no" style="color: #333;">999 reviews</span>
+                                </div>
+                                <h4 class="price" style="color: #333;">Giá: <span>10,990,000.00 vnđ</span></h4>
+                                <p class="vote">
+                                    <strong>100%</strong> hàng <strong>Chất lượng</strong>, đảm bảo
+                                    <strong>
+                                        Uy
+                                        tín
+                                    </strong>!
+                                </p>
+                                <h5 class="sizes" style="color: #333;">
+                                    sizes:
+                                    <span class="size" data-toggle="tooltip" title="cỡ Nhỏ">s</span>
+                                    <span class="size" data-toggle="tooltip" title="cỡ Trung bình">m</span>
+                                    <span class="size" data-toggle="tooltip" title="cỡ Lớn">l</span>
+                                    <span class="size" data-toggle="tooltip" title="cỡ Đại">xl</span>
+                                </h5>
+                                <h5 class="colors" style="color: #333;">
+                                    colors:
+                                    <span class="color orange not-available" data-toggle="tooltip"
+                                          title="Hết hàng"></span>
+                                    <span class="color green"></span>
+                                    <span class="color blue"></span>
+                                </h5>
+                                <div class="form-group">
+                                    <label for="soluong">Số lượng đặt mua:</label>
+                                    <input type="number" class="form-control" id="soluong" name="soluong">
+                                </div>
+                                <div class="action">
+                                    <a class="add-to-cart btn btn-default" id="btnThemVaoGioHang">Thêm vào giỏ hàng</a>
+                                </div>
+                            </div>
 
-        <label for="psw"><b>Tên sách</b></label>
-        <input type="text" name="psw" required>
-
-        <label for="psw"><b>Mô tả</b></label>
-        <input type="text" name="psw" required>
-
-        <label for="psw"><b>Giá bán</b></label>
-        <input type="text" name="psw" required>
-
-        <label for="psw"><b>Nhà xuất bản</b></label>
-        <input type="text" name="psw" required>
-
-        <label for="psw"><b>Tác giả</b></label>
-        <input type="text" name="psw" required>
-        <button type="submit">Yêu cầu</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
     </div>
-</form>
+    <!-- End block content -->
+</main>
+
+<script>
+
+</script>
 
