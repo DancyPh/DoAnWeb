@@ -1,0 +1,24 @@
+﻿
+@{
+    Layout = null;
+}
+
+<div class="col-md-6" style="padding: 14px 40px">
+    @foreach (var i in Model)
+     {
+         <div class="pricing-entry d-flex ftco-animate row" >
+             <img src="~/images/@i.hinhanh" class="img" />
+             <div class="desc pl-3">
+                 <div class="d-flex text align-items-center">
+                     <h3><a href="@Url.Action("ChitietSanPham","Home", new { id = i.maSanPham })"><span>@i.tenSanPham</span></a></h3>
+                     <span class="price">@i.gia</span>
+                 </div>
+                 <div class="d-block">
+                      <p>@i.mota</p>
+                 </div>
+             </div>
+         </div>
+     }
+</div>
+       
+

@@ -105,7 +105,8 @@ namespace DoAn.Controllers
 
         public ActionResult Dangxuat()
         {
-            return View();
+            Session["TaiKhoan"] = null;
+            return RedirectToAction("Index","Home");
         }
         // GET: User
         public ActionResult Index()

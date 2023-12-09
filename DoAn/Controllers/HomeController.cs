@@ -29,10 +29,6 @@ namespace DoAn.Controllers
             return View(sp);
         }
 
-        public ActionResult Logout()
-        {
-            return PartialView("LogoutPartial");
-        }
 
         [HttpGet]
         public ActionResult Index()

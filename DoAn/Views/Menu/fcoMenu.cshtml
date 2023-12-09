@@ -1,58 +1,8 @@
-﻿@model IEnumerable<DoAn.Models.SanPham>
+﻿
 @{
-    ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = null;
 }
-<style>
-    .img_pro {
-        height: 270px;
-        width: 254px;
-    }
-</style>
 
-<section class="home-slider owl-carousel img" style="background-image: url(/images/bg_1.jpg);">
-
-    <div class="slider-item" style="background-image: url(/images/bg_3.jpg);">
-        <div class="overlay"></div>
-        <div class="container">
-            <div class="row slider-text justify-content-center align-items-center">
-
-                <div class="col-md-7 col-sm-12 text-center ftco-animate">
-                    <h1 class="mb-3 mt-5 bread">Our Menu</h1>
-                    <p class="breadcrumbs"><span>Menu</span></p>
-                </div>
-
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="ftco-section">
-    <div class="container">
-        <div class="row justify-content-center mb-5 pb-3">
-            <div class="col-md-7 heading-section ftco-animate text-center">
-                <h2 class="mb-4">Our Menu</h2>
-            </div>
-        </div>
-    </div>
-    <div class="container-wrap">
-        <div class="row no-gutters d-flex">
-            @foreach (var i in Model)
-            {
-                <div class="col-lg-4 d-flex ftco-animate">
-                    <div class="services-wrap d-flex">
-                        <img src="~/images/@i.hinhanh" class="img_pro" />
-                        <div class="text p-4">
-                            <h3><a style="color: #fff;" href="@Url.Action("ChitietSanPham","Home", new { id = i.maSanPham })">@i.tenSanPham</a></h3>
-                            <p>@i.mota </p>
-                            <p class="price"><span>@i.gia</span> <a href="@Url.Action("ThemGioHang","GioHang", new { ms = i.maSanPham, url = Request.Url.ToString()})" class="ml-2 btn btn-white btn-outline-white">Order</a></p>
-                        </div>
-                    </div>
-                </div>
-            }
-        </div>
-    </div>
-    @Html.Action("OurSanPham","Menu")
 
 <section class="ftco-menu">
     <div class="container-fluid">
@@ -74,37 +24,18 @@
                             <div class="tab-pane fade show active" id="v-pills-1" role="tabpanel" aria-labelledby="v-pills-1-tab">
                                 <div class="row">
                                     <div class="col-md-4 text-center">
-                                        <div class="menu-wrap">
-                                            <a href="#" class="menu-img img mb-4" style="background-image: url(/images/pizza-1.jpg);"></a>
-                                            <div class="text">
-                                                <h3><a href="#">Itallian Pizza</a></h3>
-                                                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
-                                                <p class="price"><span>$2.90</span></p>
-                                                <p><a href="#" class="btn btn-white btn-outline-white">Add to cart</a></p>
+                                        @foreach (var i in Model)
+                                         {
+                                            <div class="menu-wrap">
+                                                <a href="#" class="menu-img img mb-4" style="background-image: url(/images/pizza-1.jpg);"></a>
+                                                <div class="text">
+                                                    <h3><a href="#">Itallian Pizza</a></h3>
+                                                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
+                                                    <p class="price"><span>$2.90</span></p>
+                                                    <p><a href="#" class="btn btn-white btn-outline-white">Add to cart</a></p>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4 text-center">
-                                        <div class="menu-wrap">
-                                            <a href="#" class="menu-img img mb-4" style="background-image: url(/images/pizza-2.jpg);"></a>
-                                            <div class="text">
-                                                <h3><a href="#">Itallian Pizza</a></h3>
-                                                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
-                                                <p class="price"><span>$2.90</span></p>
-                                                <p><a href="#" class="btn btn-white btn-outline-white">Add to cart</a></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4 text-center">
-                                        <div class="menu-wrap">
-                                            <a href="#" class="menu-img img mb-4" style="background-image: url(/images/pizza-3.jpg);"></a>
-                                            <div class="text">
-                                                <h3><a href="#">Itallian Pizza</a></h3>
-                                                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
-                                                <p class="price"><span>$2.90</span></p>
-                                                <p><a href="#" class="btn btn-white btn-outline-white">Add to cart</a></p>
-                                            </div>
-                                        </div>
+                                         }
                                     </div>
                                 </div>
                             </div>

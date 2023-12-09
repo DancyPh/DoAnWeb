@@ -17,14 +17,39 @@ namespace DoAn.Controllers
 
         private List<SanPham> LaySp(int count)
         {
-            return db.SanPhams.OrderByDescending(a => a.maSanPham).Take(count).ToList();
+            return db.SanPhams.OrderBy(a => a.soLuong).Take(count).ToList();
+        }
+
+        private List<SanPham> LaySpPizza(int count)
+        {
+            return db.SanPhams.Where(a => a.maLoai == 1).Take(count).ToList();
+        }
+
+        private List<SanPham> LaySpNuoc(int count)
+        {
+            return db.SanPhams.Where(a => a.maLoai == 2).Take(count).ToList();
         }
 
 
         [HttpGet]
+        public ActionResult fcoMenu()
+        {
+            var list = LaySpPizza(3);
+            return View(list);
+        }
+
+
+        [HttpGet]
+        public ActionResult OurSanPham1()
+        {
+            var list = LaySp(3);
+            return View(list);
+        }
+
+        [HttpGet]
         public ActionResult OurSanPham()
         {
-            var list = LaySp(6);
+            var list = LaySpHot(3);
             return View(list);
         }
 

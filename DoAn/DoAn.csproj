@@ -768,6 +768,8 @@
     <Content Include="Views\GioHang\XacNhanDonHang.cshtml" />
     <Content Include="Views\DatBan\Index.cshtml" />
     <Content Include="Views\Menu\OurSanPham.cshtml" />
+    <Content Include="Views\Menu\OurSanPham1.cshtml" />
+    <Content Include="Views\Menu\fcoMenu.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
