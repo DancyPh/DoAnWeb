@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewBag.Title = "fcoMenu1";
+    Layout = null;
+}
+
+
+        @foreach (var i in Model)
+        {
+            <div class="col-md-4 text-center">
+
+                <div class="menu-wrap">
+                    <img src="~/images/@i.hinhanh" class="menu-img img mb-4" />
+                    <div class="text">
+                        <h3><a href="#">@i.tenSanPham</a></h3>
+                        <p>@i.mota</p>
+                        <p class="price"><span>@i.gia</span></p>
+                        <p><a href="@Url.Action("ThemGioHang","GioHang", new { ms = @i.maSanPham, url = Request.Url.ToString()})" class="btn btn-white btn-outline-white">Add to cart</a></p>
+                    </div>
+                </div>
+
+            </div>
+        }
+
+

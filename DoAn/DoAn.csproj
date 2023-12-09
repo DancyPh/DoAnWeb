@@ -770,6 +770,7 @@
     <Content Include="Views\Menu\OurSanPham.cshtml" />
     <Content Include="Views\Menu\OurSanPham1.cshtml" />
     <Content Include="Views\Menu\fcoMenu.cshtml" />
+    <Content Include="Views\Menu\fcoMenu1.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

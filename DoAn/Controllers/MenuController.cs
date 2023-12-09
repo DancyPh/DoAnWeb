@@ -30,6 +30,13 @@ namespace DoAn.Controllers
             return db.SanPhams.Where(a => a.maLoai == 2).Take(count).ToList();
         }
 
+        [HttpGet]
+        public ActionResult fcoMenu1()
+        {
+            var list = LaySpNuoc(3);
+            return View(list);
+        }
+
 
         [HttpGet]
         public ActionResult fcoMenu()
