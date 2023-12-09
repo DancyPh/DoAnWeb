@@ -17,14 +17,14 @@
                             <a class="nav-link" id="v-pills-2-tab" data-toggle="pill" href="#v-pills-2" role="tab" aria-controls="v-pills-2" aria-selected="false">Drinks</a>
                         </div>
                     </div>
-                    <div class="col-md-12 d-flex align-items-center">
+                    <div class="col-md-12 d-flex align-items-center" style="justify-content: center">
 
                         <div class="tab-content ftco-animate" id="v-pills-tabContent">
 
                             <div class="tab-pane fade show active" id="v-pills-1" role="tabpanel" aria-labelledby="v-pills-1-tab">
                                 <div class="row">
                                     @foreach (var i in Model)
-                                     {
+                                    {
                                         <div class="col-md-4 text-center">
 
                                             <div class="menu-wrap">
@@ -38,9 +38,13 @@
                                             </div>
 
                                         </div>
-                                     } 
+                                    }
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="v-pills-2" role="tabpanel" aria-labelledby="v-pills-2-tab">
+                                <div class="row">
                                     @Html.Action("fcoMenu1", "Menu");
-                                </div> 
+                                </div>
                             </div>
                         </div>
                     </div>
