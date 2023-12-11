@@ -106,7 +106,35 @@ namespace DoAn.Areas.Admin.Controllers
             return View(lstGioHang);
         }
 
+        [HttpPost]
+        public ActionResult Accept()
+        {
+            bool check = true;
+            DonHang dh = new DonHang();
+            NhanVien nv = new NhanVien();
+            Ban ban = new Ban();
+            List<Cart> lstGioHang = GetGioHang();
+            dh.maNhanVien = nv.maNhanVien;
+            dh.ngayDatHang = DateTime.Now;
+            dh.tongTien = (decimal?)Total();
+            data.DonHangs.InsertOnSubmit(dh);
+            data.SubmitChanges();
 
+            // Lặp qua danh sách giỏ hàng để tạo và thêm ChiTietDonHang vào cơ sở dữ liệu
+            foreach (var i in lstGioHang)
+            {
+                ChiTietDonHang ctdh = new ChiTietDonHang();
+                ctdh.maDonHang = dh.maDonHang;
+                ctdh.maSanPham = i.iSanPham;
+                ctdh.soLuong = i.qSanPham;
+                ctdh.thanhTien = (decimal)i.tThanhTien;
+                data.ChiTietDonHangs.InsertOnSubmit(ctdh);
+            }
+            data.SubmitChanges();
+
+            Session["Cart"] = null;
+            return RedirectToAction("Table", "Home");
+        }
 
         public ActionResult GioHangPartial()
 		{

@@ -705,6 +705,7 @@
       <LastGenOutput>QLPizza.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Areas\Admin\Views\Order\OrderNhanVien.cshtml" />
     <None Include="Models\QLPizza.dbml.layout">
       <DependentUpon>QLPizza.dbml</DependentUpon>
     </None>

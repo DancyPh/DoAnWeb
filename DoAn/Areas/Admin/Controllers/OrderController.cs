@@ -88,6 +88,13 @@ namespace DoAn.Areas.Admin.Controllers
         }
 
         [HttpGet]
+        public ActionResult OrderNhanVien()
+        {
+            var listOrders = data.DonHangs.ToList();
+            return View(listOrders);
+        }
+
+        [HttpGet]
         public ActionResult GoiMon()
 		{
             var product = data.SanPhams.ToList();

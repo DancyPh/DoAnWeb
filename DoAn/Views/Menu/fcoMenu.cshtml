@@ -30,7 +30,7 @@
                                             <div class="menu-wrap">
                                                 <img src="~/images/@i.hinhanh" class="menu-img img mb-4" />
                                                 <div class="text">
-                                                    <h3><a href="#">@i.tenSanPham</a></h3>
+                                                    <h3><a href="@Url.Action("ChitietSanPham","Home", new { id = i.maSanPham })">@i.tenSanPham</a></h3>
                                                     <p>@i.mota</p>
                                                     <p class="price"><span>@i.gia</span></p>
                                                     <p><a href="@Url.Action("ThemGioHang","GioHang", new { ms = @i.maSanPham, url = Request.Url.ToString()})" class="btn btn-white btn-outline-white">Add to cart</a></p>

@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<DoAn.Models.DonHang>
 
 @{
-    ViewBag.Title = "GetOrders";
+    ViewBag.Title = "OrderNhanVien";
     Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
 }
 
@@ -10,23 +10,21 @@
 
     <table class="w3-table w3-bordered">
         <tr>
-            <th>Tên khách hàng</th>
+            <th>Ma nhan vien</th>
             <th>Ngày đặt</th>
             <th>Tổng tiền</th>
-            <th>Trạng thái</th>
         </tr>
         @foreach (var item in Model)
         {
-            if (item.maKhachHang != null && item.maNhanVien == null)
+            if (item.maKhachHang == null && item.maNhanVien != null)
             {
                 <!-- Hiển thị thông tin đơn hàng -->
                 <tr>
-                    <td>@item.KhachHang.hoTen</td>
+                    <td>@item.NhanVien.maNhanVien</td>
                     <td>@item.ngayDatHang</td>
                     <td>
                         @item.tongTien VND
                     </td>
-                    <td>@item.IsConfirmed</td>
                     <td>
                         <!-- Nút hoặc liên kết chuyển đến trang chi tiết đơn hàng và xác nhận đơn -->
                         <a href="@Url.Action("Detail", "Order", new { id = @item.maDonHang})">Detail</a>

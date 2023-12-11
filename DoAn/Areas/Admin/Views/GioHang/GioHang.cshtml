@@ -72,12 +72,15 @@
                         </div>
                     }
 
-                    <div class="card">
-                        <div class="card-body">
-                            <button type="button" class="btn btn-warning btn-block btn-lg">Proceed to Pay: @ViewBag.Total</button>
-                            
-                        </div>
+                <div class="card">
+                    <div class="card-body">
+
+                        @using (Html.BeginForm("Accept", "GioHang"))
+                        {
+                <input type="submit" value="Xác nhận" />}
+
                     </div>
+                </div>
 
                 </div>
             </div>
